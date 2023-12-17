@@ -31,7 +31,6 @@ export default function(options : TTransitionOptions) {
 
     const variants : (a : Args) => string = tv(options);
 
-
     let previousArgs : Args;
     return (args? : Args) => {
 
