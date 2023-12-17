@@ -9,18 +9,19 @@ type TTransitionOptions = TVOptions & {
             from: string,
             to: string;
             class: string,
-        }
+        }[]
     };
 };
 
 export default function(options : TTransitionOptions) {
 
     if(options.transitions) {
-        for (const [key, value] of Object.entries(options.transitions)) {
+        for (const [key, values] of Object.entries(options.transitions)) {
             if(options.variants[key]) {
-                const transitionVariantName = `${value.from}-to-${value.to}`;
-
-                options.variants[key][transitionVariantName] = twMerge(value.class, options.variants[key][value.to]);
+                values.map((value) => {
+                    const transitionVariantName = `${value.from}-to-${value.to}`;
+                    options.variants[key][transitionVariantName] = twMerge(value.class, options.variants[key][value.to]);
+                })
             }
         };
     }

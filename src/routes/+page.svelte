@@ -2,7 +2,7 @@
     import transition from '$lib/tailwind-transition';
 
     const card = transition({
-        base: 'flex border border-black rounded justify-center',
+        base: 'flex border border-black rounded justify-center transition-all',
         variants: {
             size: {
                 small: 'w-20',
@@ -14,11 +14,15 @@
             }
         },
         transitions: {
-            size: {
+            size: [{
                 from: 'small',
                 to: 'big',
-                class: 'transition-all duration-1000'
-            },
+                class: 'duration-1000'
+            }, {
+                from: 'big',
+                to: 'small',
+                class: 'duration-500'
+            }],
         }
     });
 

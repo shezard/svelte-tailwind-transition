@@ -14,7 +14,7 @@ Demo for a way to handle from / to transition with tailwind-variants
     import transition from '$lib/tailwind-transition';
 
     const card = transition({
-        base: 'flex border border-black rounded justify-center',
+        base: 'flex border border-black rounded justify-center transition-all',
         variants: {
             size: {
                 small: 'w-20',
@@ -26,11 +26,15 @@ Demo for a way to handle from / to transition with tailwind-variants
             }
         },
         transitions: {
-            size: {
+            size: [{
                 from: 'small',
                 to: 'big',
-                class: 'transition-all duration-1000'
-            },
+                class: 'duration-1000'
+            }, {
+                from: 'big',
+                to: 'small',
+                class: 'duration-500'
+            }],
         }
     });
 
@@ -56,5 +60,4 @@ Demo for a way to handle from / to transition with tailwind-variants
         </button>
     </div>
 </div>
-
 ```
