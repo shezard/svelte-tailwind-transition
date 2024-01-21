@@ -1,5 +1,5 @@
 <script lang="ts">
-    import transition from '$lib/tailwind-transition';
+    import transition from '$lib/tailwind-variants-transition';
 
     const card = transition({
         base: 'flex border border-black rounded justify-center transition-all',

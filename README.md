@@ -1,4 +1,4 @@
-# Svelte Tailwind transition
+# Svelte Tailwind variants transitions
 
 Demo for a way to handle from / to transition with tailwind-variants
 
@@ -11,7 +11,7 @@ Demo for a way to handle from / to transition with tailwind-variants
 # Basic usage
 ```svelte
 <script lang="ts">
-    import transition from '$lib/tailwind-transition';
+    import transition from '$lib/tailwind-variants-transition';
 
     const card = transition({
         base: 'flex border border-black rounded justify-center transition-all',
